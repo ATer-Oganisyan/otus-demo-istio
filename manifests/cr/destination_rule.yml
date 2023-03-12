@@ -1,0 +1,18 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: my-destination-rule
+spec:
+  host: simple-http-crud-service
+  trafficPolicy:
+    loadBalancer:
+      simple: UNSPECIFIED
+  subsets:
+  - name: v1
+    labels:
+      app: simple-http-crud-server
+      version: v1
+  - name: v2
+    labels:
+      app: simple-http-crud-server
+      version: v2
