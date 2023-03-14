@@ -3,16 +3,16 @@ kind: DestinationRule
 metadata:
   name: my-destination-rule
 spec:
-  host: simple-http-crud-service
+  host: otus-http-service
   trafficPolicy:
     loadBalancer:
       simple: UNSPECIFIED
   subsets:
   - name: v1
     labels:
-      app: simple-http-crud-server
+      app: otus-http-server
       version: v1
   - name: v2
     labels:
-      app: simple-http-crud-server
+      app: otus-http-server
       version: v2
